@@ -215,7 +215,7 @@ public class Repository {
 			n.setProjectHead(rs.getString(3));
 			n.setProjectDetails(rs.getString(4));
 			n.setToolsUsed(rs.getString(5));
-			n.setCategory(rs.getString(6));
+		/*	n.setCategory(rs.getString(6));*/
 		    name.add(n);
 		}
 
