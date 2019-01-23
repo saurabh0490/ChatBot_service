@@ -228,4 +228,30 @@ public class Repository {
 		// TODO Auto-generated method stub
 	
 	}
+
+               public List<String> AllCategory() {
+	
+		List <String> Domain=new ArrayList<>();
+		
+		String sql="SELECT DISTINCT category from Hartford";
+		
+		try {
+		Statement st = con.createStatement();
+		ResultSet rs =	st.executeQuery(sql);
+		while(rs.next()) {
+			
+		
+			Domain.add((rs.getString(1)));
+		}
+
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		return Domain;
+	} 
+ 
+
+	
+	
 }
