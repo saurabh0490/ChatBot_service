@@ -89,5 +89,13 @@ public class GetName {
 	public List<Names> getname(@PathParam("category") String category){
 		return repo.CategoryName(category);
 	}
+	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/AllCategory")
+	public List<String> getCategory(){
+		return repo.AllCategory();
+	} 
 
 }
