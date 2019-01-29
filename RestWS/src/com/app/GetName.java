@@ -89,5 +89,36 @@ public class GetName {
 	public List<Names> getname(@PathParam("category") String category){
 		return repo.CategoryName(category);
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/AllCategory")
+	public List<String> getCategory(){
+		return repo.AllCategory();
+	} 
+	
+	/*@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("more/{id,category}")
+	public Names getname(@PathParam("id","domain") int id,String domain){
+		return repo.moreDetails(id,domain);
+	}*/
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("development/{id}")
+	public DevName getAllDevelopment(@PathParam("id") int id){
+		return repo.singleDev(id);
+	}
+	
+	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("testing/{id}")
+	public TestName getAllTesting(@PathParam("id") int id){
+		return repo.singleTest(id);
+	}
 
+	
 }

@@ -3,74 +3,61 @@ package com.resource;
 
 public class Names {
 
+	
+	private  int   projectId;
 	private String projectName;
-	private  int projectId;
-	private String projectDetails;
-	private String projectHead;
-	private String toolsUsed;
+	private String description;
 	private String category;
-	
-	
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getProjectName() {
-		return projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-
+	private String fundamentalDocumentLink;
 	public int getProjectId() {
 		return projectId;
 	}
-
 	public void setProjectId(int projectId) {
 		this.projectId = projectId;
 	}
-
-	public String getProjectDetails() {
-		return projectDetails;
+	public String getProjectName() {
+		return projectName;
 	}
-
-	public void setProjectDetails(String projectDetails) {
-		this.projectDetails = projectDetails;
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
-
-	public String getProjectHead() {
-		return projectHead;
+	public String getDescription() {
+		return description;
 	}
-
-	public void setProjectHead(String projectHead) {
-		this.projectHead = projectHead;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-	public String getToolsUsed() {
-		return toolsUsed;
+	public String getCategory() {
+		return category;
 	}
-
-	public void setToolsUsed(String toolsUsed) {
-		this.toolsUsed = toolsUsed;
+	public void setCategory(String category) {
+		this.category = category;
 	}
-
-
-	
+	public String getFundamentalDocumentLink() {
+		return fundamentalDocumentLink;
+	}
+	public void setFundamentalDocumentLink(String fundamentalDocumentLink) {
+		this.fundamentalDocumentLink = fundamentalDocumentLink;
+	}
 	@Override
 	public String toString() {
-		return "Names [category=" + category + ", ProjectName=" + projectName + ", ProjectId=" + projectId
-				+ ", ProjectDetails=" + projectDetails + ", ProjectHead=" + projectHead + ", ToolsUsed=" + toolsUsed
-				+ "]";
+		return "Names [projectId=" + projectId + ", projectName=" + projectName + ", description=" + description
+				+ ", category=" + category + ", fundamentalDocumentLink=" + fundamentalDocumentLink
+				+ ", getProjectId()=" + getProjectId() + ", getProjectName()=" + getProjectName()
+				+ ", getDescription()=" + getDescription() + ", getCategory()=" + getCategory()
+				+ ", getFundamentalDocumentLink()=" + getFundamentalDocumentLink() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
 	
 	
-	}
+	
+
+	
+	
+	
+	
+}
 	
 	
 		
