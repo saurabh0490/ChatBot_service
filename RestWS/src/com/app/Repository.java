@@ -60,7 +60,7 @@ public class Repository {
 			n.setProjectName(rs.getString(2));
 			n.setDescription(rs.getString(3));
 			n.setCategory(rs.getString(4));
-		    n.setFundamentalDocumentLink(rs.getString(5));
+		    n.setFunctionalDocumentLink(rs.getString(5));
 			name.add(n);
 		
 		}
@@ -82,7 +82,7 @@ public class Repository {
 		st.setString(2, n.getProjectName());
 		st.setString(3, n.getDescription());
 		st.setString(4, n.getCategory());
-        st.setString(5, n.getFundamentalDocumentLink());
+        st.setString(5, n.getFunctionalDocumentLink());
 		st.executeUpdate();
 		
 		}
@@ -106,7 +106,7 @@ public class Repository {
 			n.setProjectName(rs.getString(2));
 			n.setDescription(rs.getString(3));
 			n.setCategory(rs.getString(4));
-		    n.setFundamentalDocumentLink(rs.getString(5));
+		    n.setFunctionalDocumentLink(rs.getString(5));
 		 
 		
 		}
@@ -131,7 +131,7 @@ public class Repository {
 
 
 	public void Update(Names n) {
-		String sql="update Hartford set ProjectName=?,Description=?,Category=?,FundamentalDocumentLink=? where ProjectId=?";
+		String sql="update Hartford set ProjectName=?,Description=?,Category=?,FunctionalDocumentLink=? where ProjectId=?";
 		Repository repo=new Repository();
 		try {
 		PreparedStatement st=con.prepareStatement(sql);
@@ -151,11 +151,11 @@ public class Repository {
 		st.setString(3, n.getCategory());}
 		
 		
-		if(n.getFundamentalDocumentLink()==null) {
-			st.setString(4, repo.singleName(n.getProjectId()).getFundamentalDocumentLink());
+		if(n.getFunctionalDocumentLink()==null) {
+			st.setString(4, repo.singleName(n.getProjectId()).getFunctionalDocumentLink());
 		}
 		else {
-			st.setString(4, n.getFundamentalDocumentLink());
+			st.setString(4, n.getFunctionalDocumentLink());
 		}
 		
 		if(n.getProjectId()==0)
@@ -207,7 +207,7 @@ public class Repository {
 			n.setProjectName(rs.getString(2));
 			n.setDescription(rs.getString(3));
 			n.setCategory(rs.getString(4));
-		    n.setFundamentalDocumentLink(rs.getString(5));
+		    n.setFunctionalDocumentLink(rs.getString(5));
 		  
 		/*	n.setCategory(rs.getString(6));*/
 		    name.add(n);

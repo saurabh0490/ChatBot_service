@@ -8,7 +8,8 @@ public class Names {
 	private String projectName;
 	private String description;
 	private String category;
-	private String fundamentalDocumentLink;
+	private String functionalDocumentLink;
+	
 	public int getProjectId() {
 		return projectId;
 	}
@@ -33,21 +34,24 @@ public class Names {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getFundamentalDocumentLink() {
-		return fundamentalDocumentLink;
+	public String getFunctionalDocumentLink() {
+		return functionalDocumentLink;
 	}
-	public void setFundamentalDocumentLink(String fundamentalDocumentLink) {
-		this.fundamentalDocumentLink = fundamentalDocumentLink;
+	public void setFunctionalDocumentLink(String functionalDocumentLink) {
+		this.functionalDocumentLink = functionalDocumentLink;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Names [projectId=" + projectId + ", projectName=" + projectName + ", description=" + description
-				+ ", category=" + category + ", fundamentalDocumentLink=" + fundamentalDocumentLink
-				+ ", getProjectId()=" + getProjectId() + ", getProjectName()=" + getProjectName()
-				+ ", getDescription()=" + getDescription() + ", getCategory()=" + getCategory()
-				+ ", getFundamentalDocumentLink()=" + getFundamentalDocumentLink() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", category=" + category + ", functionalDocumentLink=" + functionalDocumentLink + ", getProjectId()="
+				+ getProjectId() + ", getProjectName()=" + getProjectName() + ", getDescription()=" + getDescription()
+				+ ", getCategory()=" + getCategory() + ", getFunctionalDocumentLink()=" + getFunctionalDocumentLink()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
 	
 	
 	
