@@ -1,0 +1,100 @@
+package com.app;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.resource.Names;
+
+@Path("/GetName")
+public class GetName {
+
+	Repository repo = new Repository();
+
+	@GET
+	@Path("/All")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Names> getnames() {
+        return repo.AllNames();
+
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("single/{id}")
+	public Names getname(@PathParam("id") int id) {
+		return repo.singleName(id);
+	}
+
+	@POST
+	@Path("/create")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Names CreateName(Names n) {
+		System.out.println(n);
+		repo.addName(n);
+		return n;
+	}
+
+	@PUT
+	@Path("/update")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Names UpdateName(Names n) {
+		System.out.println(n);
+		if (repo.singleName(n.getProjectId()).getProjectId() == 0) {
+			System.out.println("Data not present");
+		} else {
+			repo.Update(n);
+		}
+		return n;
+	}
+
+	@DELETE
+	@Path("/delete/{id}")
+	public Names DeleteName(@PathParam("id") int id) {
+		Names n = repo.singleName(id);
+		System.out.println(n);
+		if (n.getProjectId() == 0) {
+			System.out.println("Data to be deleted is not present");
+		} else {
+			repo.Delete(id);
+		}
+		return n;
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("category/{category}")
+	public List<Names> getname(@PathParam("category") String category) {
+		return repo.CategoryName(category);
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/AllCategory")
+	public List<String> getCategory() {
+		return repo.AllCategory();
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("development/{id}")
+	public DevName getAllDevelopment(@PathParam("id") int id) {
+		return repo.singleDev(id);
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("testing/{id}")
+	public TestName getAllTesting(@PathParam("id") int id) {
+		return repo.singleTest(id);
+	}
+
+}
